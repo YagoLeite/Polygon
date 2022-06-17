@@ -1,7 +1,7 @@
 import { Flex, Box } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
-import { useControlerContext } from "../../Context/Context";
+import { useControlerContext } from "../../context/ControlerContext";
 import SpinningIcon from "./SpinningIcon";
 import {
   findingAngles,

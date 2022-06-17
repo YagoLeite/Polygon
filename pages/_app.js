@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import ControlerState from "../Context/Context";
+import ControlerState from "../context/ControlerContext";
 
 function MyApp({ Component, pageProps }) {
   return (

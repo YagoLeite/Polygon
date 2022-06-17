@@ -6,7 +6,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { useControlerContext } from "../../Context/Context";
+import { useControlerContext } from "../../context/ControlerContext";
 
 const Controler = () => {
   const { state, dispatch } = useControlerContext();
