@@ -1,4 +1,10 @@
-import { Flex, Input, InputGroup, InputLeftAddon } from "@chakra-ui/react";
+import {
+  Flex,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 import { useControlerContext } from "../../Context/Context";
 
@@ -7,28 +13,24 @@ const Controler = () => {
   return (
     <Flex justify="space-around" h="150px">
       <Flex>
-        <InputGroup>
-          <InputLeftAddon children="Number of Sides" />
-          <Input
-            type="number"
-            onChange={(e) =>
-              dispatch({ type: "SIDES-UPDATE", value: +e.target.value })
-            }
-            placeholder={state.sides}
-          />
-        </InputGroup>
+        <Text>Number of sides</Text>
+        <Input
+          type="number"
+          onChange={(e) =>
+            dispatch({ type: "SIDES-UPDATE", value: +e.target.value })
+          }
+          placeholder={state.sides}
+        />
       </Flex>
       <Flex>
-        <InputGroup>
-          <InputLeftAddon children="Size of your div" />
-          <Input
-            type="number"
-            onChange={(e) =>
-              dispatch({ type: "DIV-UPDATE", value: +e.target.value })
-            }
-            placeholder={state.divSize}
-          />
-        </InputGroup>
+        <Text>Size of your div</Text>
+        <Input
+          type="number"
+          onChange={(e) =>
+            dispatch({ type: "DIV-UPDATE", value: +e.target.value })
+          }
+          placeholder={state.divSize}
+        />
       </Flex>
     </Flex>
   );
