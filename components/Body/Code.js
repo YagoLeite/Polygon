@@ -14,7 +14,7 @@ const Code = ({ positions }) => {
       </Text>
       {positions.map((position, index) => {
         return (
-          <Text>
+          <Text key={index}>
             child{index}.
             {`
               {
