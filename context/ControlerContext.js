@@ -7,6 +7,7 @@ const ControlerState = ({ children }) => {
   const [state, dispatch] = useReducer(controlerReducer, {
     sides: 2,
     divSize: 400,
+    verticeDiv: 50,
   });
   return (
     <Controler.Provider value={{ state, dispatch }}>

@@ -4,5 +4,10 @@ export const controlerReducer = (state, action) => {
       return { ...state, divSize: action.value };
     case "SIDES-UPDATE":
       return { ...state, sides: action.value };
+    case "VERTICEDIV-UPDATE":
+      return {
+        ...state,
+        verticeDiv: action.value,
+      };
   }
 };

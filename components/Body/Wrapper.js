@@ -33,25 +33,32 @@ const fading = {
 
 const Wrapper = () => {
   const { state } = useControlerContext();
-  console.log(state);
+  console.log(Math.round(state.verticeDiv / 2));
+
   const testando = topAndLeft(
     arrayOfPositions(findingAngles(state.sides || 0))
   );
   return (
     <Flex w="100%" minH="100vh" bg="green" justify="center" alignItems="center">
-      <Flex h={state.divSize} w={state.divSize} position="relative" bg="red">
+      <Flex
+        h={state.divSize}
+        w={state.divSize}
+        position="relative"
+        borderRadius="50%"
+        bg="red"
+      >
         <Flex fontSize="24px" w="100%" justify="center" alignItems="center">
           <Box
             as={motion.div}
             key={Math.random()}
-            animate={{
-              rotate: 360,
-              transition: {
-                duration: 17,
-                ease: "linear",
-                repeat: Infinity,
-              },
-            }}
+            // animate={{
+            //   rotate: 360,
+            //   transition: {
+            //     duration: 17,
+            //     ease: "linear",
+            //     repeat: Infinity,
+            //   },
+            // }}
             h={state.divSize}
             w={state.divSize}
             position="relative"
@@ -61,7 +68,7 @@ const Wrapper = () => {
           >
             <Box
               as={motion.div}
-              variants={container}
+              //   variants={container}
               initial="hidden"
               animate="visible"
               exit="exit"
@@ -71,8 +78,12 @@ const Wrapper = () => {
                   <Box key={Math.random()} as={motion.div} variants={fading}>
                     <SpinningIcon
                       config={{
-                        top: `calc(${position.top}% - 25px)`,
-                        left: `calc(${position.left}% - 25px)`,
+                        top: `calc(${position.top}% - ${Math.round(
+                          state.verticeDiv / 2
+                        )}px)`,
+                        left: `calc(${position.left}% - ${Math.round(
+                          state.verticeDiv / 2
+                        )}px)`,
                       }}
                       key={index}
                     >
