@@ -3,7 +3,7 @@ import { controlerReducer } from "./Reducer";
 
 const Controler = createContext();
 
-const useControlerContext = ({ children }) => {
+const ControlerState = ({ children }) => {
   const [state, dispatch] = useReducer(controlerReducer, {
     sides: 2,
     divSize: 400,
@@ -15,8 +15,8 @@ const useControlerContext = ({ children }) => {
   );
 };
 
-export const ControlerState = () => {
+export const useControlerContext = () => {
   return useContext(Controler);
 };
 
-export default useControlerContext;
+export default ControlerState;
