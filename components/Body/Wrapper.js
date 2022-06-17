@@ -8,6 +8,7 @@ import {
   arrayOfPositions,
   topAndLeft,
 } from "../../helpers/Helpers";
+import Code from "./Code";
 
 const container = {
   hidden: {
@@ -35,67 +36,70 @@ const Wrapper = () => {
   const { state } = useControlerContext();
   console.log(Math.round(state.verticeDiv / 2));
 
-  const testando = topAndLeft(
+  const positionArray = topAndLeft(
     arrayOfPositions(findingAngles(state.sides || 0))
   );
   return (
-    <Flex w="100%" minH="100vh" bg="green" justify="center" alignItems="center">
-      <Flex
-        h={state.divSize}
-        w={state.divSize}
-        position="relative"
-        borderRadius="50%"
-        bg="red"
-      >
-        <Flex fontSize="24px" w="100%" justify="center" alignItems="center">
+    <Flex
+      direction="column"
+      w="100%"
+      minH="100vh"
+      bg="green"
+      justify="center"
+      alignItems="center"
+      gap="50px"
+    >
+      <Flex fontSize="24px" w="100%" justify="center" alignItems="center">
+        <Box
+          as={motion.div}
+          key={Math.random()}
+          bg="red"
+          animate={{
+            rotate: 360,
+            transition: {
+              duration: 17,
+              ease: "linear",
+              repeat: Infinity,
+            },
+          }}
+          h={state.divSize}
+          w={state.divSize}
+          position="relative"
+          borderRadius="50%"
+          // border="1px"
+          // borderColor="white"
+        >
           <Box
             as={motion.div}
-            key={Math.random()}
-            // animate={{
-            //   rotate: 360,
-            //   transition: {
-            //     duration: 17,
-            //     ease: "linear",
-            //     repeat: Infinity,
-            //   },
-            // }}
-            h={state.divSize}
-            w={state.divSize}
-            position="relative"
-            // borderRadius="50%"
-            // border="1px"
-            // borderColor="white"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
-            <Box
-              as={motion.div}
-              //   variants={container}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-            >
-              {testando.map((position, index) => {
-                return (
-                  <Box key={Math.random()} as={motion.div} variants={fading}>
-                    <SpinningIcon
-                      config={{
-                        top: `calc(${position.top}% - ${Math.round(
-                          state.verticeDiv / 2
-                        )}px)`,
-                        left: `calc(${position.left}% - ${Math.round(
-                          state.verticeDiv / 2
-                        )}px)`,
-                      }}
-                      key={index}
-                    >
-                      {index}
-                    </SpinningIcon>
-                  </Box>
-                );
-              })}
-            </Box>
+            {positionArray.map((position, index) => {
+              return (
+                <Box key={Math.random()} as={motion.div} variants={fading}>
+                  <SpinningIcon
+                    config={{
+                      top: `calc(${position.top}% - ${Math.round(
+                        state.verticeDiv / 2
+                      )}px)`,
+                      left: `calc(${position.left}% - ${Math.round(
+                        state.verticeDiv / 2
+                      )}px)`,
+                    }}
+                    key={index}
+                  >
+                    {index}
+                  </SpinningIcon>
+                </Box>
+              );
+            })}
           </Box>
-        </Flex>
+        </Box>
       </Flex>
+
+      <Code positions={positionArray} />
     </Flex>
   );
 };
