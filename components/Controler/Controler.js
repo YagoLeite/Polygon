@@ -5,7 +5,7 @@ import { useControlerContext } from "../../Context/Context";
 const Controler = () => {
   const { state, dispatch } = useControlerContext();
   return (
-    <Flex justify="space-around" h="150px" bg="red">
+    <Flex justify="space-around" h="150px">
       <Flex>
         <InputGroup>
           <InputLeftAddon children="Number of Sides" />

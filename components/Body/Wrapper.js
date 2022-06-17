@@ -3,28 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useControlerContext } from "../../Context/Context";
 import SpinningIcon from "./SpinningIcon";
-
-const findingAngles = (number) => {
-  const interiorAngle = (360 / number) * (Math.PI / 180);
-  let arrayOfAngles = [];
-  for (let i = 1; i <= number; i++) {
-    arrayOfAngles.push(i * interiorAngle);
-  }
-  return arrayOfAngles;
-};
-const arrayOfPositions = (array) => {
-  return array.map((angle) => {
-    return { x: Math.sin(angle) / 2, y: Math.cos(angle) / 2 };
-  });
-};
-const topAndLeft = (array) => {
-  return array.map((position) => {
-    return {
-      left: (0.5 - position.x) * 100,
-      top: (0.5 - position.y) * 100,
-    };
-  });
-};
+import {
+  findingAngles,
+  arrayOfPositions,
+  topAndLeft,
+} from "../../helpers/Helpers";
 
 const container = {
   hidden: {
@@ -93,7 +76,7 @@ const Wrapper = () => {
                       }}
                       key={index}
                     >
-                      {index}{" "}
+                      {index}
                     </SpinningIcon>
                   </Box>
                 );
