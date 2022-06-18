@@ -5,7 +5,13 @@ import { useControlerContext } from "../context/ControlerContext";
 
 export default function Home() {
   return (
-    <Box minH="100vh" bg="#1B2430" color="whiteAlpha.900">
+    <Box
+      minH="100vh"
+      px={["16px"]}
+      pt={["16px"]}
+      bg="#1B2430"
+      color="whiteAlpha.900"
+    >
       <Controler />
       <Wrapper />
     </Box>

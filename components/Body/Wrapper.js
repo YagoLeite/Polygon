@@ -46,7 +46,7 @@ const Wrapper = () => {
       h="100%"
       justify="center"
       alignItems="center"
-      gap="50px"
+      mt={["150px"]}
     >
       <Flex fontSize="24px" w="100%" justify="center" alignItems="center">
         <Box
