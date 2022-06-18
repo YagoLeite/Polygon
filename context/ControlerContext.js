@@ -8,6 +8,10 @@ const ControlerState = ({ children }) => {
     sides: 2,
     divSize: 400,
     verticeDiv: 50,
+    color: "#712B75",
+    fadeInAnim: false,
+    bigDivRotationAnim: false,
+    smallDivRotationAnim: false,
   });
   return (
     <Controler.Provider value={{ state, dispatch }}>
