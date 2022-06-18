@@ -15,6 +15,7 @@ const SpinningIcon = (props) => {
       h={verticeDiv}
       w={verticeDiv}
       bg="white"
+      //   bgGradient="radial(#ffffff , #505556 )"
       fontWeight="500"
       color="black"
       borderRadius="50%"
