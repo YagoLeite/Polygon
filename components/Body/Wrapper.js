@@ -41,72 +41,71 @@ const Wrapper = () => {
   );
   return (
     <Flex
-      direction="column"
+      fontSize="24px"
+      mt="150px"
+      h={state.divSize * 2}
       w="100%"
-      h="100%"
       justify="center"
-      alignItems="center"
-      mt={["150px"]}
     >
-      <Flex fontSize="24px" w="100%" justify="center" alignItems="center">
+      <Box
+        as={motion.div}
+        key={Math.random()}
+        bgGradient="radial(#6dd5ed,#181d1e)"
+        animate={
+          state.bigDivRotationAnim
+            ? {
+                rotate: 360,
+                transition: {
+                  duration: 17,
+                  ease: "linear",
+                  repeat: Infinity,
+                },
+              }
+            : {}
+        }
+        h={state.divSize}
+        w={state.divSize}
+        position="relative"
+        borderRadius="50%"
+      >
         <Box
           as={motion.div}
-          key={Math.random()}
-          bgGradient="radial(#6dd5ed,#181d1e)"
-          animate={
-            state.bigDivRotationAnim
-              ? {
-                  rotate: 360,
-                  transition: {
-                    duration: 17,
-                    ease: "linear",
-                    repeat: Infinity,
-                  },
-                }
-              : {}
-          }
-          h={state.divSize}
-          w={state.divSize}
-          position="relative"
-          borderRadius="50%"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
         >
-          <Box
-            as={motion.div}
-            variants={container}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            {positionArray.map((position, index) => {
-              return (
-                <Box
-                  key={Math.random()}
-                  as={motion.div}
-                  variants={state.fadeInAnim ? fading : ""}
+          {positionArray.map((position, index) => {
+            return (
+              <Box
+                key={Math.random()}
+                as={motion.div}
+                variants={state.fadeInAnim ? fading : ""}
+              >
+                <SpinningIcon
+                  config={{
+                    top: `calc(${position.top}% - ${Math.round(
+                      state.verticeDiv / 2
+                    )}px)`,
+                    left: `calc(${position.left}% - ${Math.round(
+                      state.verticeDiv / 2
+                    )}px)`,
+                  }}
+                  key={index}
                 >
-                  <SpinningIcon
-                    config={{
-                      top: `calc(${position.top}% - ${Math.round(
-                        state.verticeDiv / 2
-                      )}px)`,
-                      left: `calc(${position.left}% - ${Math.round(
-                        state.verticeDiv / 2
-                      )}px)`,
-                    }}
-                    key={index}
-                  >
-                    {index}
-                  </SpinningIcon>
-                </Box>
-              );
-            })}
-          </Box>
+                  {index}
+                </SpinningIcon>
+              </Box>
+            );
+          })}
         </Box>
-      </Flex>
-
-      {/* <Code positions={positionArray} /> */}
+      </Box>
     </Flex>
   );
 };
 
 export default Wrapper;
+
+{
+  /* <Code positions={positionArray} /> */
+}
