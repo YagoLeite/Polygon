@@ -43,8 +43,7 @@ const Wrapper = () => {
     <Flex
       direction="column"
       w="100%"
-      minH="100vh"
-      bg="green"
+      h="100%"
       justify="center"
       alignItems="center"
       gap="50px"
@@ -53,21 +52,23 @@ const Wrapper = () => {
         <Box
           as={motion.div}
           key={Math.random()}
-          bg="red"
-          animate={{
-            rotate: 360,
-            transition: {
-              duration: 17,
-              ease: "linear",
-              repeat: Infinity,
-            },
-          }}
+          bg={state.color}
+          animate={
+            state.bigDivRotationAnim
+              ? {
+                  rotate: 360,
+                  transition: {
+                    duration: 17,
+                    ease: "linear",
+                    repeat: Infinity,
+                  },
+                }
+              : {}
+          }
           h={state.divSize}
           w={state.divSize}
           position="relative"
           borderRadius="50%"
-          // border="1px"
-          // borderColor="white"
         >
           <Box
             as={motion.div}
@@ -99,7 +100,7 @@ const Wrapper = () => {
         </Box>
       </Flex>
 
-      <Code positions={positionArray} />
+      {/* <Code positions={positionArray} /> */}
     </Flex>
   );
 };
