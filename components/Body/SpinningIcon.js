@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { useControlerContext } from "../../context/ControlerContext";
 const SpinningIcon = (props) => {
   const {
-    state: { verticeDiv },
+    state: { verticeDiv, smallDivRotationAnim },
   } = useControlerContext();
-  console.log(verticeDiv);
+
   return (
     <Flex
       justify="center"
@@ -20,14 +20,18 @@ const SpinningIcon = (props) => {
       borderRadius="50%"
       as={motion.div}
       whileHover={{ scale: 1.1 }}
-      animate={{
-        rotate: -360,
-        transition: {
-          duration: 2,
-          ease: "linear",
-          repeat: Infinity,
-        },
-      }}
+      animate={
+        smallDivRotationAnim
+          ? {
+              rotate: -360,
+              transition: {
+                duration: 2,
+                ease: "linear",
+                repeat: Infinity,
+              },
+            }
+          : {}
+      }
       key={Math.random()}
       {...props.config}
     >

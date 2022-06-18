@@ -79,7 +79,11 @@ const Wrapper = () => {
           >
             {positionArray.map((position, index) => {
               return (
-                <Box key={Math.random()} as={motion.div} variants={fading}>
+                <Box
+                  key={Math.random()}
+                  as={motion.div}
+                  variants={state.fadeInAnim ? fading : ""}
+                >
                   <SpinningIcon
                     config={{
                       top: `calc(${position.top}% - ${Math.round(

@@ -9,5 +9,24 @@ export const controlerReducer = (state, action) => {
         ...state,
         verticeDiv: action.value,
       };
+    case "COLOR-UPDATE":
+      return { ...state, color: action.value };
+    case "BIGDIVANIM-UPDATE":
+      return {
+        ...state,
+        bigDivRotationAnim: action.value,
+      };
+    case "SMALLDIVANIM-UPDATE":
+      return {
+        ...state,
+        smallDivRotationAnim: action.value,
+      };
+    case "FADEIN-UPDATE":
+      return {
+        ...state,
+        fadeInAnim: action.value,
+      };
+    default:
+      return state;
   }
 };
