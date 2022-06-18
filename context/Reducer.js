@@ -9,8 +9,6 @@ export const controlerReducer = (state, action) => {
         ...state,
         verticeDiv: action.value,
       };
-    case "COLOR-UPDATE":
-      return { ...state, color: action.value };
     case "BIGDIVANIM-UPDATE":
       return {
         ...state,

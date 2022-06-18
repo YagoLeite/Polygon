@@ -37,15 +37,6 @@ const Controler = () => {
             placeholder={state.verticeDiv}
           />
         </Flex>
-        <Flex>
-          <Text>Color</Text>
-          <Input
-            type="color"
-            onChange={(e) =>
-              dispatch({ type: "COLOR-UPDATE", value: e.target.value })
-            }
-          />
-        </Flex>
       </Flex>
       <Flex justify="space-around" h="50px">
         <Checkbox

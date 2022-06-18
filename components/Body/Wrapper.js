@@ -52,7 +52,7 @@ const Wrapper = () => {
         <Box
           as={motion.div}
           key={Math.random()}
-          bg={state.color}
+          bgGradient="radial(#6dd5ed,#181d1e)"
           animate={
             state.bigDivRotationAnim
               ? {
