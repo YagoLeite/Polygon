@@ -29,10 +29,18 @@ const Header = () => {
   );
   return (
     <Flex mb="16px" w="100%" justify="space-between" align="center">
-      <Flex pl="50px" color="#08fdd8">
-        <WavyText fontSize="32px" text="Made by:" delayDuration={1} />
+      <Flex pl={["15px", "50px"]} color="#08fdd8">
+        <WavyText
+          fontSize={["24px", "32px"]}
+          text="Made by:"
+          delayDuration={1}
+        />
         <Box opacity="0">aa</Box>
-        <WavyText fontSize="32px" text="Yago Leite" delayDuration={1.7} />
+        <WavyText
+          fontSize={["24px", "32px"]}
+          text="Yago Leite"
+          delayDuration={1.7}
+        />
       </Flex>
       {/* <Box></Box> */}
       {github}

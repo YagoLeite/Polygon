@@ -13,6 +13,7 @@ export default function Home() {
       pt={["16px"]}
       bg="#1B2430"
       color="whiteAlpha.900"
+      overflowX="hidden"
     >
       <Header />
       <Controler />
