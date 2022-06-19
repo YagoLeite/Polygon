@@ -80,7 +80,7 @@ const Controler = () => {
           <Flex w="100%" alignItems="center" justify="space-between">
             <Text>Size of center circle</Text>
             <Tooltip
-              label="Value in pixels for the diameter of the center circle"
+              label="Value in pixels for the diameter of the center circle. Maximium of 1500 pixels"
               placement="bottom-end"
             >
               <span>
