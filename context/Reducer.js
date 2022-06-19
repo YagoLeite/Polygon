@@ -7,7 +7,8 @@ export const controlerReducer = (state, action) => {
     case "VERTICEDIV-UPDATE":
       return {
         ...state,
-        verticeDiv: action.value,
+        // I have no idea why multiples of 4 bug the position.
+        verticeDiv: action.value % 4 === 0 ? action.value + 1 : action.value,
       };
     case "BIGDIVANIM-UPDATE":
       return {

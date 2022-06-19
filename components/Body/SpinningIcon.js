@@ -17,7 +17,7 @@ const SpinningIcon = (props) => {
       bg="white"
       //   bgGradient="radial(#ffffff , #505556 )"
       fontWeight="500"
-      fontSize={["16px", "24px"]}
+      //   fontSize={["16px", "24px"]}
       color="black"
       borderRadius="50%"
       as={motion.div}

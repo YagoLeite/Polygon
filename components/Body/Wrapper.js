@@ -34,8 +34,6 @@ const fading = {
 
 const Wrapper = () => {
   const { state } = useControlerContext();
-  console.log(Math.round(state.verticeDiv / 2));
-
   const positionArray = topAndLeft(
     arrayOfPositions(findingAngles(state.sides || 0))
   );
@@ -84,12 +82,8 @@ const Wrapper = () => {
               >
                 <SpinningIcon
                   config={{
-                    top: `calc(${position.top}% - ${Math.round(
-                      state.verticeDiv / 2
-                    )}px)`,
-                    left: `calc(${position.left}% - ${Math.round(
-                      state.verticeDiv / 2
-                    )}px)`,
+                    top: `calc(${position.top}% - ${state.verticeDiv / 2}px)`,
+                    left: `calc(${position.left}% - ${state.verticeDiv / 2}px)`,
                   }}
                   key={index}
                 >
