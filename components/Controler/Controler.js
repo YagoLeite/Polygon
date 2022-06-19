@@ -129,7 +129,7 @@ const Controler = () => {
           <Flex alignItems="center" justify="space-between">
             <Text>Size of smaller circles</Text>
             <Tooltip
-              label="Size of the circles that are on the center circle"
+              label="Size of the circles that are on the center circle. It bugs in some cases. I'm working on it"
               placement="bottom-end"
             >
               <span>
@@ -156,7 +156,7 @@ const Controler = () => {
             Fade-in animation
           </Checkbox>
           <Tooltip
-            label="Circle on center circle will spawn with a certain delay"
+            label="Circles on center circle will spawn with a certain delay"
             placement="bottom-end"
           >
             <span>
