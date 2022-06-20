@@ -27,6 +27,7 @@ const Header = () => {
       </Link>
     </Flex>
   );
+
   return (
     <Flex mb="16px" w="100%" justify="space-between" align="center">
       <Flex pl={["15px", "50px"]} color="#08fdd8">

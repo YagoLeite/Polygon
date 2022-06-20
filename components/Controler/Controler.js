@@ -7,7 +7,7 @@ const Controler = () => {
   const { state, dispatch } = useControlerContext();
   return (
     <Flex
-      direction={["column", "row"]}
+      direction={["column", "column", "row"]}
       w="100%"
       justify={["center", "space-around"]}
       gap={["8px"]}
@@ -20,7 +20,7 @@ const Controler = () => {
         p="8px"
         direction="column"
         gap="20px"
-        w={["full", "250px"]}
+        w={["full", "full", "250px"]}
       >
         <Flex w="100%" direction="column">
           <Flex w="100%" alignItems="center" justify="space-between">
@@ -73,7 +73,7 @@ const Controler = () => {
         p="8px"
         direction="column"
         gap="20px"
-        w={["full", "250px"]}
+        w={["full", "full", "250px"]}
         // border="outlined"
       >
         <Flex w="100%" direction="column">
@@ -123,7 +123,7 @@ const Controler = () => {
         p="8px"
         direction="column"
         gap="20px"
-        w={["full", "250px"]}
+        w={["full", "full", "250px"]}
       >
         <Flex direction="column" w="100%">
           <Flex alignItems="center" justify="space-between">
