@@ -7,6 +7,8 @@ import {
   findingAngles,
   arrayOfPositions,
   topAndLeft,
+  ArrayOfAngles,
+  ArrayOfPositions,
 } from "../../helpers/Helpers";
 import Code from "./Code";
 
@@ -34,8 +36,12 @@ const fading = {
 
 const Wrapper = () => {
   const { state } = useControlerContext();
+  // const positionArray = topAndLeft(
+  //   arrayOfPositions(findingAngles(state.sides || 0))
+  // );
+
   const positionArray = topAndLeft(
-    arrayOfPositions(findingAngles(state.sides || 0))
+    ArrayOfPositions(ArrayOfAngles(222.5)(155))(0.05)
   );
   return (
     <Flex
