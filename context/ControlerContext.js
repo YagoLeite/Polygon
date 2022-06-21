@@ -6,8 +6,8 @@ const Controler = createContext();
 const ControlerState = ({ children }) => {
   const [state, dispatch] = useReducer(controlerReducer, {
     sides: 2,
-    divSize: 300,
-    verticeDiv: 50,
+    divSize: 500,
+    verticeDiv: 4,
     color: "#712B75",
     fadeInAnim: false,
     bigDivRotationAnim: false,
