@@ -41,7 +41,7 @@ const Wrapper = () => {
   // );
 
   const positionArray = topAndLeft(
-    ArrayOfPositions(ArrayOfAngles(222.5)(155))(0.05)
+    ArrayOfPositions(ArrayOfAngles(222.5)(555))(0.01)
   );
   return (
     <Flex
@@ -93,7 +93,7 @@ const Wrapper = () => {
                   }}
                   key={index}
                 >
-                  {index}
+                  {/* {index} */}
                 </SpinningIcon>
               </Box>
             );
