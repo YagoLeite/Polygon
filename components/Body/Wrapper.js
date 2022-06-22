@@ -18,7 +18,7 @@ const container = {
   },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.35 },
+    transition: { staggerChildren: 0.015 },
   },
 };
 
@@ -54,7 +54,7 @@ const Wrapper = () => {
       <Box
         as={motion.div}
         key={Math.random()}
-        bgGradient="radial(#6dd5ed,#181d1e)"
+        // bgGradient="radial(#6dd5ed,#181d1e)"
         animate={
           state.bigDivRotationAnim
             ? {
@@ -87,6 +87,7 @@ const Wrapper = () => {
                 variants={state.fadeInAnim ? fading : ""}
               >
                 <SpinningIcon
+                  color={Math.floor(Math.random() * 65)}
                   config={{
                     top: `calc(${position.top}% - ${state.verticeDiv / 2}px)`,
                     left: `calc(${position.left}% - ${state.verticeDiv / 2}px)`,
