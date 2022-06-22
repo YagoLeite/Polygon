@@ -2,6 +2,7 @@ import React from "react";
 import { Flex } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useControlerContext } from "../../context/ControlerContext";
+import { colors } from "../../helpers/Helpers";
 const SpinningIcon = (props) => {
   const {
     state: { verticeDiv, smallDivRotationAnim },
@@ -14,7 +15,7 @@ const SpinningIcon = (props) => {
       position="absolute"
       h={verticeDiv}
       w={verticeDiv}
-      bg="white"
+      bg={colors[props.color]}
       borderWidth="1px"
       borderColor="black"
       //   bgGradient="radial(#ffffff , #505556 )"
