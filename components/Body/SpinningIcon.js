@@ -15,16 +15,18 @@ const SpinningIcon = (props) => {
       position="absolute"
       h={verticeDiv}
       w={verticeDiv}
-      bg={colors[props.color]}
+      // bg={colors[props.color]}
+      bg="#1B2430"
       borderWidth="1px"
       borderColor="black"
-      //   bgGradient="radial(#ffffff , #505556 )"
+      // bgGradient={`radial(#ffffff , #505556 )`}
+      bgGradient={`radial(#ffffff , ${colors[props.color]})`}
       fontWeight="500"
       //   fontSize={["16px", "24px"]}
       color="black"
       borderRadius="50%"
       as={motion.div}
-      whileHover={{ scale: 1.1 }}
+      // whileHover={{ scale: 1.1 }}
       animate={
         smallDivRotationAnim
           ? {
