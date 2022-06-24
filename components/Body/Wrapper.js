@@ -77,7 +77,12 @@ const Wrapper = () => {
           w={state.divSize}
           position="relative"
           borderRadius="50%"
-          whileHover={{ scale: 4.1 }}
+          whileHover={{
+            scale: 3.5,
+            transition: {
+              duration: 3,
+            },
+          }}
           overflow="hidden"
         >
           <Box
